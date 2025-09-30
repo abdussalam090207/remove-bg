@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG Remover By Alam - Remove Background Tanpa WTRMK dan HD</title>
+    <link rel="stylesheet" href="desain.css">
+</head>
+
+<body>
+    <div class="bg-animation"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">A</div>
+                <span>BG Remover By Alam</span>
+            </div>
+            <div class="features-badge">
+                <span class="badge">✨ AI Powered</span>
+                <span class="badge">🚀 High Quality</span>
+                <span class="badge">⚡ Fast Process</span>
+                <span class="badge"># Beta</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="upload-section" id="uploadSection">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📸</div>
+                <div class="upload-text">
+                    <h3>Upload Foto Anda</h3>
+                    <p>Drag & drop foto ke sini atau klik untuk browse</p>
+                    <p style="font-size: 0.85rem; color: #999; margin-top: 0.5rem;">
+                        Format: JPG, PNG, WebP (Max: 10MB)
+                    </p>
+                </div>
+                <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+                    Pilih Foto
+                </button>
+            </div>
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
+
+        <div class="processing-section" id="processingSection">
+            <div class="controls">
+                <div class="control-group">
+                    <label class="control-label">Warna Background:</label>
+                    <input type="color" class="color-picker" id="bgColorPicker" value="#ffffff">
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Preset Colors:</label>
+                    <div class="preset-colors">
+                        <div class="preset-color"
+                            style="background: transparent; background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-size: 10px 10px; background-position: 0 0, 5px 5px;"
+                            data-color="transparent" title="Transparent"></div>
+                        <div class="preset-color active" style="background: #ffffff;" data-color="#ffffff"
+                            title="White"></div>
+                        <div class="preset-color" style="background: #000000;" data-color="#000000" title="Black"></div>
+                        <div class="preset-color" style="background: #ff0000;" data-color="#ff0000" title="Red"></div>
+                        <div class="preset-color" style="background: #00ff00;" data-color="#00ff00" title="Green"></div>
+                        <div class="preset-color" style="background: #0000ff;" data-color="#0000ff" title="Blue"></div>
+                        <div class="preset-color" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"
+                            data-color="gradient1" title="Gradient Purple"></div>
+                        <div class="preset-color" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"
+                            data-color="gradient2" title="Gradient Pink"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="compare-container" id="compareContainer">
+                <div class="compare-wrapper">
+                    <img class="compare-image" id="originalImage" alt="Original">
+                    <div class="compare-overlay" id="compareOverlay">
+                        <img class="compare-image" id="processedImage" alt="Processed">
+                    </div>
+                    <div class="compare-slider" id="compareSlider"></div>
+                    <div class="compare-labels">
+                        <span class="compare-label">After</span>
+                        <span class="compare-label">Before</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="action-btn btn-secondary" id="resetBtn">
+                    <span>🔄</span> Upload Foto Baru
+                </button>
+                <button class="action-btn btn-primary" id="processBtn">
+                    <span>✨</span> Remove Background
+                </button>
+                <button class="action-btn btn-success" id="downloadBtn" style="display: none;">
+                    <span>⬇️</span> Download Hasil
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Sedang memproses foto...</div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <span class="toast-icon"></span>
+        <span class="toast-message"></span>
+        <span class="toast-close" onclick="hideToast()">✕</span>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>BG Remover By Alam</h4>
+                <p>Tool gratis untuk menghapus background foto dengan kualitas tinggi menggunakan teknologi AI. Cepat,
+                    mudah, dan hasil profesional.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/6289531657198" class="social-link" title="WhatsApp"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg></a>
+                    <a href="https://www.linkedin.com/in/abdus-salam-614704328/" class="social-link" title="LinkedIn"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a>
+                    <a href="https://www.instagram.com/profalaaamm_/" class="social-link" title="Instagram"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a>
+                    <a href="https://github.com/abdussalam090207" class="social-link" title="GitHub"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg></a>
+                </div>
+            </div>
+
+            <div class="gris">
+                <div class="footer-section">
+                    <h4>Fitur</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Background Removal</a></li>
+                        <li><a href="#">Custom Background Color</a></li>
+                        <li><a href="#">High Quality Export</a></li>
+                        <li><a href="#">Before/After Preview</a></li>
+                        <li><a href="#">Batch Processing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Bantuan</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://wa.me/6289531657198">Cara Penggunaan</a></li>
+                        <li><a href="https://www.instagram.com/profalaaamm_/">FAQ</a></li>
+                        <li><a href="https://wa.me/6289531657198">Tips & Tricks</a></li>
+                        <li><a href="mailto:belajar.alam2007@gmail.com">Hubungi Kami</a></li>
+                        <li><a href="#">Laporkan Bug</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-stats">
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Foto Diproses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Pengguna Aktif</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Kepuasan</span>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem;">&copy; 2025 BG Remover By Alam. Made with Abdus Salam.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem;">Enjoyyy</p>
+        </div>
+    </footer>
+
+    <script src="fungsi.js"></script>
+</body>
+
+</html>
