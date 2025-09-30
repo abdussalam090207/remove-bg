@@ -23,8 +23,8 @@ Tool gratis untuk menghapus background foto dengan kualitas tinggi menggunakan t
 
 ## 📸 Screenshot
 
-![Screenshot 1](/screenshot1.png)
-![Screenshot 2](/screenshot2.png)
+![Screenshot 1](/Screenshot1.png)
+![Screenshot 2](/Screenshot2.png)
 
 ## 🛠️ Teknologi
 
