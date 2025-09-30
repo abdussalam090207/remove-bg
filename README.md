@@ -2,9 +2,9 @@
 
 Tool gratis untuk menghapus background foto dengan kualitas tinggi menggunakan teknologi AI. Cepat, mudah, dan hasil profesional.
 
-![BG Remover Pro](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![BG Remover By Alam](https://img.shields.io/badge/version-1.0.1-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Cloudinary](https://img.shields.io/badge/powered%20by-Cloudinary-3448C5)
+![API](https://img.shields.io/badge/powered%20by-Cloudinary-3448C5)
 
 ## ✨ Fitur Utama
 
