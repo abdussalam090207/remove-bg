@@ -36,7 +36,4 @@ Tool gratis untuk menghapus background foto dengan kualitas tinggi menggunakan t
 - **Canvas API** - Image manipulation
 
 ## 📋 Persyaratan
-
-- Browser modern (Chrome, Firefox, Edge, Safari)
-- Koneksi internet (untuk akses Cloudinary API)
-- Akun Cloudinary (free tier sudah cukup)
+- Pakai Aja
